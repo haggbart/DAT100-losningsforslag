@@ -49,14 +49,17 @@ public class MiniExcel {
             for (int i = 0; i < bredde - 1; i++) {
                 tall = data[rad][i];
                 sum += tall;
-                sumkol[i] += tall;
+                //sumkol[i] += tall;
+
+                data[data.length-1][i] += tall;
             }
-            data[rad][bredde - 1] = sum;
-            sumkol[bredde - 1] += sum;
+            data[rad][bredde-1] = sum;
+            data[hoyde-1][bredde-1] += sum;
+            //sumkol[bredde - 1] += sum;
         }
 
         // sett kolonnesum i siste element
-        System.arraycopy(sumkol, 0, data[hoyde - 1], 0, bredde);
+        //System.arraycopy(sumkol, 0, data[hoyde - 1], 0, bredde);
 
         // TODO - END
     }
