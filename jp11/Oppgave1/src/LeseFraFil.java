@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import static javax.swing.JOptionPane.showInputDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -11,7 +8,7 @@ public class LeseFraFil {
     private static String MAPPE_STR = System.getProperty("user.dir") + "/Oppgave1/src/" +
             LeseFraFil.class.getPackage().getName().replace(".", "/") + "/";
 
-    static public void main(String[] args) throws IOException {
+    static public void main(String[] args) {
 
 
         String filnavn = null;
@@ -26,6 +23,7 @@ public class LeseFraFil {
         while (forsok <= maxForsok && reader == null) {
             try {
                 filnavn = showInputDialog("Filnavn i mappen " + MAPPE_STR);
+                if (filnavn == null) System.exit(0);
 
                 File file = new File(MAPPE_STR + filnavn);
 
@@ -44,11 +42,14 @@ public class LeseFraFil {
 
                 reader.close();
 
-            } catch (Exception e) {
-             showMessageDialog(null, "Filen " + filnavn + " finnes ikke. \n"
+            } catch (FileNotFoundException e) {
+             showMessageDialog(null, "Filen " + filnavn + " finnes ikke.\n"
                      + e.getMessage());
 //                System.out.println("Filen " + filnavn + " finnes ikke. \n" + e.getMessage());
                 forsok++;
+            } catch (IOException e) {
+                showMessageDialog(null, "Kan ikke lese fra filen.\n"
+                        + e.getMessage());
             }
         }
     }
