@@ -9,6 +9,13 @@ public class Main {
 
 //        System.out.println(Utskrift.terninger(sim));
 
+        long startTime = System.currentTimeMillis();
         Utskrift.fullPrint(sim);
+
+        long stopTime = System.currentTimeMillis();
+        System.out.println("Time to execute: " + (stopTime - startTime));
+
+
+
     }
 }

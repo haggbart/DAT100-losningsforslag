@@ -23,7 +23,7 @@ public class Flyavgang {
 
     @Override
     public String toString() {
-        String status = "";
+        String status;
         switch (this.status) {
             case 'o':
                 status = "on-time";
