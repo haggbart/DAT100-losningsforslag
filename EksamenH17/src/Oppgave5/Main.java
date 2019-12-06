@@ -39,7 +39,7 @@ public class Main {
 
     public static boolean erPositivRekke(int[][] mat, int r) { // b
         for (int k = 0; k < mat[r].length; k++) {
-            if (mat[r][k] <= 0) return false;
+            if (mat[r][k] < 0) return false;
         }
         return true;
     }
