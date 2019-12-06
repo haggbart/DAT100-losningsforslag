@@ -34,7 +34,7 @@ public class Main {
 
     public static boolean erPositiv(int[][] mat, int r, int k) { // a
 
-        return mat[r][k] > 0;
+        return mat[r][k] >= 0;
     }
 
     public static boolean erPositivRekke(int[][] mat, int r) { // b
