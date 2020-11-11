@@ -11,7 +11,7 @@ public class Videoarkiv {
     }
 
     public void leggTil(Video video) {
-        if (antall < antall) {
+        if (antall < videoer.length) {
             videoer[antall] = video;
             antall++;
             return;
