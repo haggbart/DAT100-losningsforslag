@@ -1,0 +1,5 @@
+heisann hoppsann prebz og dennis her in the building
+du er kul
+// denne skal ikke skrives ut: preben er kul
+men denne skal skrives ut: roger er kul
+the end
